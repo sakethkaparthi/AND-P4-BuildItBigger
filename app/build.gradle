@@ -21,6 +21,10 @@ android {
     testOptions {
         unitTests.returnDefaultValues = true
     }
+    productFlavors{
+        free{}
+        paid{}
+    }
 }
 
 dependencies {
@@ -30,6 +34,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.3.0'
     compile 'junit:junit:4.12'
     // Added for AdMob
-    compile 'com.google.android.gms:play-services:9.4.0'
+    freeCompile 'com.google.android.gms:play-services:9.4.0'
     compile project(path: ':JokesBackend', configuration: 'android-endpoints')
 }

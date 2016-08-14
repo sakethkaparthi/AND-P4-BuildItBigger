@@ -1,14 +1,16 @@
-package com.udacity.gradle.builditbigger;
+package com.udacity.gradle.builditbigger.free;
 
 import android.os.Bundle;
 import android.support.v4.util.Pair;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.udacity.gradle.builditbigger.EndpointsAsyncTask;
+import com.udacity.gradle.builditbigger.R;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,4 @@ public class MainActivity extends ActionBarActivity {
         asyncTask.execute(Pair.create(getApplicationContext(), "saketh"));
 //        Toast.makeText(this, new Javajoker().getAJoke(), Toast.LENGTH_SHORT).show();
     }
-
-
 }
