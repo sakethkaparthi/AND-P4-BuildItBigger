@@ -85,3 +85,8 @@ proguard/
 ## Project Specific files
 /docs
 *.zip
+JokesBackend/src/main/webapp/css/
+JokesBackend/src/main/webapp/js/
+androidjoker/libs/
+androidjoker/src/main/res/drawable/
+javajoker/libs/
