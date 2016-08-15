@@ -34,5 +34,11 @@ public class MyEndpoint {
         response.setData(new Javajoker().getAJoke());
         return response;
     }
+    @ApiMethod(name = "sayHi")
+    public MyBean sayHi() {
+        MyBean response = new MyBean();
+        response.setData(new Javajoker().getAJoke());
+        return response;
+    }
 
 }

@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId(getString(R.string.interstitial_ad_unit_id));
+        mInterstitialAd.setAdUnitId(getResources().getString(R.string.interstitial_ad_unit_id));
 
         requestNewInterstitial();
     }
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void requestNewInterstitial() {
         AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .addTestDevice(getResources().getString(R.string.interstitial_ad_id))
                 .build();
 
         mInterstitialAd.loadAd(adRequest);
