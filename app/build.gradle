@@ -11,6 +11,7 @@ android {
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -21,13 +22,16 @@ android {
     testOptions {
         unitTests.returnDefaultValues = true
     }
-    productFlavors{
-        free{}
-        paid{}
+    productFlavors {
+        free {}
+        paid {}
     }
 }
 
 dependencies {
+    androidTestCompile 'com.android.support:support-annotations:24.1.1'
+    androidTestCompile 'com.android.support.test:runner:0.5'
+    androidTestCompile 'com.android.support.test:rules:0.5'
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile project(':javajoker')
     compile project(':androidjoker')
