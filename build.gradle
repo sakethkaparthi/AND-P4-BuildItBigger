@@ -18,6 +18,9 @@ allprojects {
     }
 }
 
-task testLocal{
-
+task testLocal {
+    dependsOn = [':JokesBackend:appengineRun', ':app:connectedAndroidTest', ':JokesBackend:appengineStop']
+    doLast {
+        println "Tasks executed"
+    }
 }
