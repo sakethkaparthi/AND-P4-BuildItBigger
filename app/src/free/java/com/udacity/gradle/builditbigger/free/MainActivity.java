@@ -54,9 +54,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void tellJoke(View view) {
         final ProgressDialog progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Loading...");
+        progressDialog.setMessage(getResources().getString(R.string.loading_message));
         progressDialog.show();
-        EndpointsAsyncTask asyncTask = new EndpointsAsyncTask(new EndpointsAsyncTask.OnFetchCompleted() {
+        EndpointsAsyncTask asyncTask = new EndpointsAsyncTask(MainActivity.this, new EndpointsAsyncTask.OnFetchCompleted() {
             @Override
             public void onFetched(final String result) {
                 mInterstitialAd.setAdListener(new AdListener() {

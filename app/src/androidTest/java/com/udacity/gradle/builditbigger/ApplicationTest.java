@@ -20,7 +20,7 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
 
     @Test
     public void testJoker() throws Exception {
-        new AsyncTest(new AsyncTest.OnJokeFetchedListener() {
+        new AsyncTest(getContext(), new AsyncTest.OnJokeFetchedListener() {
             @Override
             public void onJokeFetched(String joke) {
                 assertNotNull(joke);

@@ -1,5 +1,6 @@
 package com.udacity.gradle.builditbigger;
 
+import android.content.Context;
 import android.os.AsyncTask;
 
 import com.example.saketh.myapplication.backend.myApi.MyApi;
@@ -14,8 +15,10 @@ import java.io.IOException;
 public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
     private static MyApi myApiService = null;
     private OnFetchCompleted listener;
+    private Context context;
 
-    public EndpointsAsyncTask(OnFetchCompleted listener) {
+    public EndpointsAsyncTask(Context context, OnFetchCompleted listener) {
+        this.context = context;
         this.listener = listener;
     }
 
@@ -23,7 +26,7 @@ public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
     protected String doInBackground(Void... params) {
         if (myApiService == null) {  // Only do this once
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(), new AndroidJsonFactory(), null)
-                    .setRootUrl("https://and-build-it-bigger-p4.appspot.com/_ah/api/");
+                    .setRootUrl(context.getResources().getString(R.string.root_url));
             // end options for devappserver
 
             myApiService = builder.build();
